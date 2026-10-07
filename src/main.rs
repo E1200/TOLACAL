@@ -117,7 +117,7 @@ fn main() {
         }
     };
 
-    let path = std::env::args().nth(1).unwrap_or_else(|| "/home/meminym/Documents/A320.json".to_string());
+    let path = std::env::args().nth(1).unwrap_or_else(|| "--path to json ".to_string());
     let airframe = match Airframe::get_from_json(&path) {
         Ok(a) => a,
         Err(e) => {
@@ -148,6 +148,6 @@ fn main() {
             println!("TODR {:.0} m  ASDR {:.0} m", t.todr_m, t.asdr_m);
             println!("GRADIENT %{:.2}", b.oei_gradient_pct);
         }
-        Err(e) => println!("HATA: {e}"),
+        Err(e) => println!("ERROR: {e}"),
     }
 }

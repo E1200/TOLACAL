@@ -172,7 +172,7 @@ pub fn plan(inp: &PlanInput) -> Result<PlanResult, String> {
         }),
     }
     .cloned()
-    .expect("feasible is not empty");
+    .expect("Feasible is not empty");
 
     Ok(PlanResult { best, feasible, rejected })
 }
